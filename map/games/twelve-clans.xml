@@ -934,8 +934,8 @@
             <option name="movement" value="1"/>
             <option name="isConstruction" value="true"/>
             <option name="constructionType" value="Ronin"/>
-            <option name="constructionsPerTerrPerTypePerTurn" value="999"/>
-	        <option name="maxConstructionsPerTypePerTerr" value="999"/>            
+            <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+	        <option name="maxConstructionsPerTypePerTerr" value="99"/>            
             <option name="isLandTransportable" value="true"/>
             <option name="createsResourcesList" value="-2:PUs"/>
         </attachment>
