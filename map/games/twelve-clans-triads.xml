@@ -1675,7 +1675,18 @@
             <option name="bonus" value="1"/>
             <option name="number" value="10"/>
             <option name="bonusType" value="Courage"/>
-            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Mori:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="impArtTech" value="false"/>
+        </attachment>
+        <attachment name="supportAttachmentTsumiSamurai" attachTo="Tsumi-Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+            <option name="unitType" value="Ashigaru"/>
+            <option name="faction" value="allied"/>
+            <option name="side" value="offence"/>
+            <option name="dice" value="strength"/>
+            <option name="bonus" value="1"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Courage"/>
+            <option name="players" value="Shimazu"/>
             <option name="impArtTech" value="false"/>
         </attachment>
         <attachment name="supportAttachmentEritoSamurai" attachTo="Erito-Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
