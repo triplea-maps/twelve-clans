@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="Twelve Clans" version="1.0"/>
+    <info name="Twelve Clans" version="1.2"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
     <triplea minimumVersion="1.9"/>
     <diceSides value="12"/>
@@ -184,6 +184,7 @@
     </playerList>    
 
     <unitList>
+        <!-- basic units -->
         <unit name="Ashigaru"/>
         <unit name="Bushi"/>
         <unit name="Kyudoka"/>
@@ -197,42 +198,78 @@
         <unit name="Kenin"/>
         <unit name="Kanjin"/>
 
+        <!-- clan specific heroes and units -->
+        <!-- Azai -->
         <unit name="Azai-Nagamasa"/>
-            <unit name="Todo-Takatora"/>
-            <unit name="Otani-Yoshitsugu"/>
+        <unit name="Todo-Takatora"/>
+        <unit name="Otani-Yoshitsugu"/>
+        <unit name="Erito-Samurai"/>
+
+        <!-- Chosokabe -->
         <unit name="Chosokabe-Motochika"/>
-            <unit name="Saika-Magoichi"/>
-            <unit name="Akechi-Mitsuhide"/>
+        <unit name="Saika-Magoichi"/>
+        <unit name="Akechi-Mitsuhide"/>
+        <unit name="Boei-Teppo"/>
+
+        <!-- Date -->
         <unit name="Date-Masamune"/>
-            <unit name="Katakura-Kojuro"/>
-            <unit name="Yagyu-Munenori"/>
+        <unit name="Katakura-Kojuro"/>
+        <unit name="Yagyu-Munenori"/>
+        <unit name="Tsumi-Teppo"/>
+
+        <!-- Hojo -->
         <unit name="Hojo-Ujiyasu"/>
-            <unit name="Fuma-Kotaro"/>
-            <unit name="Hojo-Ujimasa"/>
+        <unit name="Fuma-Kotaro"/>
+        <unit name="Hojo-Ujimasa"/>
+        <unit name="Tsumi-Ninja"/>
+
+        <!-- Miyoshi -->
         <unit name="Miyoshi-Masanaga"/>
-            <unit name="Matsunaga-Hisahide"/>
-            <unit name="Tomomichi-Ishinari"/>
+        <unit name="Matsunaga-Hisahide"/>
+        <unit name="Tomomichi-Ishinari"/>
+        <unit name="Boei-Kyudoka"/>
+
+        <!-- Mori -->
         <unit name="Mori-Motonari"/>
-            <unit name="Takenaka-Hanbei"/>
-            <unit name="Kobayakawa-Takakage"/>
+        <unit name="Takenaka-Hanbei"/>
+        <unit name="Kobayakawa-Takakage"/>
+        <unit name="Tsumi-Kyudoka"/>
+
+        <!-- Oda -->
         <unit name="Oda-Nobunaga"/>
-            <unit name="Maeda-Toshiie"/>
-            <unit name="Hashiba-Hideyoshi"/>
+        <unit name="Maeda-Toshiie"/>
+        <unit name="Hashiba-Hideyoshi"/>
+        <unit name="Erito-Nobori"/>
+
+        <!-- Otomo -->
         <unit name="Otomo-Yoshishige"/>
-            <unit name="Tachibana-Muneshige"/>
-            <unit name="Tachibana-Ginchiyo"/>
+        <unit name="Tachibana-Muneshige"/>
+        <unit name="Tachibana-Ginchiyo"/>
+        <unit name="Boei-Bushi"/>
+
+        <!-- Shimazu -->
         <unit name="Shimazu-Yoshihiro"/>
-            <unit name="Shimazu-Toyohisa"/>
-            <unit name="Ishida-Mitsunari"/>
+        <unit name="Shimazu-Toyohisa"/>
+        <unit name="Ishida-Mitsunari"/>
+        <unit name="Tsumi-Samurai"/>
+
+        <!-- Takeda -->
         <unit name="Takeda-Shingen"/>
-            <unit name="Sanada-Nobuyuki"/>
-            <unit name="Sanada-Yukimura"/>
+        <unit name="Sanada-Nobuyuki"/>
+        <unit name="Sanada-Yukimura"/>
+        <unit name="Tsumi-Mawari"/>
+
+        <!-- Tokugawa -->
         <unit name="Tokugawa-Ieyasu"/>
-            <unit name="Hattori-Hanzo"/>
-            <unit name="Honda-Tadakatsu"/>
+        <unit name="Hattori-Hanzo"/>
+        <unit name="Honda-Tadakatsu"/>
+        <unit name="Boei-Ninja"/>
+
+        <!-- Uesugi -->
         <unit name="Uesugi-Kenshin"/>
-            <unit name="Uesugi-Kagekatsu"/>
-            <unit name="Naoe-Kanetsugu"/>
+        <unit name="Uesugi-Kagekatsu"/>
+        <unit name="Naoe-Kanetsugu"/>
+        <unit name="Tsumi-Bushi"/>
     </unitList>
 
     <relationshipTypes>
@@ -243,17 +280,30 @@
 
     <gamePlay>
         <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
-        <delegate name="bid" javaClass="games.strategy.triplea.delegate.BidPurchaseDelegate" display="Bid Purchase"/>
-        <delegate name="placeBid" javaClass="games.strategy.triplea.delegate.BidPlaceDelegate" display="Bid Placement"/>
         <delegate name="move" javaClass="games.strategy.triplea.delegate.MoveDelegate" display="Combat Move"/>
         <delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
         <delegate name="purchase" javaClass="games.strategy.triplea.delegate.PurchaseDelegate" display="Purchase Units"/>
         <delegate name="place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Units"/>
         <delegate name="endTurn" javaClass="games.strategy.triplea.delegate.EndTurnDelegate" display="Turn Complete"/>
         <delegate name="endRound" javaClass="games.strategy.triplea.delegate.EndRoundDelegate" display="Round Complete"/>
+        <delegate name="userActions" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="User Actions"/>
+
+        <delegate name="fake01" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake02" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake03" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake04" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake05" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake06" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake07" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake08" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake09" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake10" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake11" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
+        <delegate name="fake12" javaClass="games.strategy.triplea.delegate.UserActionDelegate" display="Ongoing Battle"/>
 
         <sequence>
             <step name="gameInitDelegate" delegate="initDelegate" maxRunCount="1"/>
+            <step name="Fake01" delegate="fake01" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Oda -->
             <step name="OdaCombatMove" delegate="move" player="Oda" display="Combat Move"/>
@@ -261,7 +311,9 @@
             <step name="OdaNonCombatMove" delegate="move" player="Oda" display="Non Combat Move"/>
             <step name="OdaPurchase" delegate="purchase" player="Oda" display="Purchase Units"/>
             <step name="OdaPlace" delegate="place" player="Oda" display="Place Units"/>
-            <step name="OdaEndTurn" delegate="endTurn" player="Oda" display="Turn Complete"/>            
+            <step name="OdaEndTurn" delegate="endTurn" player="Oda" display="Turn Complete"/>
+
+            <step name="Fake02" delegate="fake02" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Miyoshi -->
             <step name="MiyoshiCombatMove" delegate="move" player="Miyoshi" display="Combat Move"/>
@@ -269,7 +321,9 @@
             <step name="MiyoshiNonCombatMove" delegate="move" player="Miyoshi" display="Non Combat Move"/>
             <step name="MiyoshiPurchase" delegate="purchase" player="Miyoshi" display="Purchase Units"/>
             <step name="MiyoshiPlace" delegate="place" player="Miyoshi" display="Place Units"/>
-            <step name="MiyoshiEndTurn" delegate="endTurn" player="Miyoshi" display="Turn Complete"/>            
+            <step name="MiyoshiEndTurn" delegate="endTurn" player="Miyoshi" display="Turn Complete"/>
+
+            <step name="Fake03" delegate="fake03" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Chosokabe -->
             <step name="ChosokabeCombatMove" delegate="move" player="Chosokabe" display="Combat Move"/>
@@ -277,7 +331,9 @@
             <step name="ChosokabeNonCombatMove" delegate="move" player="Chosokabe" display="Non Combat Move"/>
             <step name="ChosokabePurchase" delegate="purchase" player="Chosokabe" display="Purchase Units"/>
             <step name="ChosokabePlace" delegate="place" player="Chosokabe" display="Place Units"/>
-            <step name="ChosokabeEndTurn" delegate="endTurn" player="Chosokabe" display="Turn Complete"/>            
+            <step name="ChosokabeEndTurn" delegate="endTurn" player="Chosokabe" display="Turn Complete"/>
+
+            <step name="Fake04" delegate="fake04" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Otomo -->
             <step name="OtomoCombatMove" delegate="move" player="Otomo" display="Combat Move"/>
@@ -285,7 +341,9 @@
             <step name="OtomoNonCombatMove" delegate="move" player="Otomo" display="Non Combat Move"/>
             <step name="OtomoPurchase" delegate="purchase" player="Otomo" display="Purchase Units"/>
             <step name="OtomoPlace" delegate="place" player="Otomo" display="Place Units"/>
-            <step name="OtomoEndTurn" delegate="endTurn" player="Otomo" display="Turn Complete"/>            
+            <step name="OtomoEndTurn" delegate="endTurn" player="Otomo" display="Turn Complete"/>
+
+            <step name="Fake05" delegate="fake05" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Shimazu -->
             <step name="ShimazuCombatMove" delegate="move" player="Shimazu" display="Combat Move"/>
@@ -293,7 +351,9 @@
             <step name="ShimazuNonCombatMove" delegate="move" player="Shimazu" display="Non Combat Move"/>
             <step name="ShimazuPurchase" delegate="purchase" player="Shimazu" display="Purchase Units"/>
             <step name="ShimazuPlace" delegate="place" player="Shimazu" display="Place Units"/>
-            <step name="ShimazuEndTurn" delegate="endTurn" player="Shimazu" display="Turn Complete"/>            
+            <step name="ShimazuEndTurn" delegate="endTurn" player="Shimazu" display="Turn Complete"/>
+
+            <step name="Fake06" delegate="fake06" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Mori -->
             <step name="MoriCombatMove" delegate="move" player="Mori" display="Combat Move"/>
@@ -301,7 +361,9 @@
             <step name="MoriNonCombatMove" delegate="move" player="Mori" display="Non Combat Move"/>
             <step name="MoriPurchase" delegate="purchase" player="Mori" display="Purchase Units"/>
             <step name="MoriPlace" delegate="place" player="Mori" display="Place Units"/>
-            <step name="MoriEndTurn" delegate="endTurn" player="Mori" display="Turn Complete"/>            
+            <step name="MoriEndTurn" delegate="endTurn" player="Mori" display="Turn Complete"/>
+
+            <step name="Fake07" delegate="fake07" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Azai -->
             <step name="AzaiCombatMove" delegate="move" player="Azai" display="Combat Move"/>
@@ -309,7 +371,9 @@
             <step name="AzaiNonCombatMove" delegate="move" player="Azai" display="Non Combat Move"/>
             <step name="AzaiPurchase" delegate="purchase" player="Azai" display="Purchase Units"/>
             <step name="AzaiPlace" delegate="place" player="Azai" display="Place Units"/>
-            <step name="AzaiEndTurn" delegate="endTurn" player="Azai" display="Turn Complete"/>            
+            <step name="AzaiEndTurn" delegate="endTurn" player="Azai" display="Turn Complete"/>
+
+            <step name="Fake08" delegate="fake08" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Uesugi -->
             <step name="UesugiCombatMove" delegate="move" player="Uesugi" display="Combat Move"/>
@@ -317,7 +381,9 @@
             <step name="UesugiNonCombatMove" delegate="move" player="Uesugi" display="Non Combat Move"/>
             <step name="UesugiPurchase" delegate="purchase" player="Uesugi" display="Purchase Units"/>
             <step name="UesugiPlace" delegate="place" player="Uesugi" display="Place Units"/>
-            <step name="UesugiEndTurn" delegate="endTurn" player="Uesugi" display="Turn Complete"/>            
+            <step name="UesugiEndTurn" delegate="endTurn" player="Uesugi" display="Turn Complete"/>
+
+            <step name="Fake09" delegate="fake09" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Date -->
             <step name="DateCombatMove" delegate="move" player="Date" display="Combat Move"/>
@@ -325,7 +391,9 @@
             <step name="DateNonCombatMove" delegate="move" player="Date" display="Non Combat Move"/>
             <step name="DatePurchase" delegate="purchase" player="Date" display="Purchase Units"/>
             <step name="DatePlace" delegate="place" player="Date" display="Place Units"/>
-            <step name="DateEndTurn" delegate="endTurn" player="Date" display="Turn Complete"/>            
+            <step name="DateEndTurn" delegate="endTurn" player="Date" display="Turn Complete"/>
+
+            <step name="Fake10" delegate="fake10" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Hojo -->
             <step name="HojoCombatMove" delegate="move" player="Hojo" display="Combat Move"/>
@@ -333,7 +401,9 @@
             <step name="HojoNonCombatMove" delegate="move" player="Hojo" display="Non Combat Move"/>
             <step name="HojoPurchase" delegate="purchase" player="Hojo" display="Purchase Units"/>
             <step name="HojoPlace" delegate="place" player="Hojo" display="Place Units"/>
-            <step name="HojoEndTurn" delegate="endTurn" player="Hojo" display="Turn Complete"/>            
+            <step name="HojoEndTurn" delegate="endTurn" player="Hojo" display="Turn Complete"/>
+
+            <step name="Fake11" delegate="fake11" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Takeda -->
             <step name="TakedaCombatMove" delegate="move" player="Takeda" display="Combat Move"/>
@@ -341,7 +411,9 @@
             <step name="TakedaNonCombatMove" delegate="move" player="Takeda" display="Non Combat Move"/>
             <step name="TakedaPurchase" delegate="purchase" player="Takeda" display="Purchase Units"/>
             <step name="TakedaPlace" delegate="place" player="Takeda" display="Place Units"/>
-            <step name="TakedaEndTurn" delegate="endTurn" player="Takeda" display="Turn Complete"/>            
+            <step name="TakedaEndTurn" delegate="endTurn" player="Takeda" display="Turn Complete"/>
+
+            <step name="Fake12" delegate="fake12" player="Neutral" display="Ongoing Battle"/>
 
             <!-- Tokugawa -->
             <step name="TokugawaCombatMove" delegate="move" player="Tokugawa" display="Combat Move"/>
@@ -354,6 +426,7 @@
             <step name="NeutralEndTurn" delegate="endTurn" player="Neutral" display="Turn Complete"/>
             <step name="endRoundStep" delegate="endRound" display="Round Complete"/>
         </sequence>
+        <offset round="0"/>
     </gamePlay>
 
     <production>
@@ -363,36 +436,119 @@
             <result resourceOrUnit="Bushi" quantity="1"/>
         </productionRule>
         <productionRule name="buyTeppo">
-            <cost resource="PUs" quantity="4"/>
+            <cost resource="PUs" quantity="3"/>
             <result resourceOrUnit="Teppo" quantity="1"/>
         </productionRule>
         <productionRule name="buyKyudoka">
-            <cost resource="PUs" quantity="4"/>
+            <cost resource="PUs" quantity="3"/>
             <result resourceOrUnit="Kyudoka" quantity="1"/>
         </productionRule>
         <productionRule name="buyRonin">
-            <cost resource="PUs" quantity="5"/>
+            <cost resource="PUs" quantity="4"/>
             <result resourceOrUnit="Ronin" quantity="1"/>
         </productionRule>
         <productionRule name="buyNobori">
-            <cost resource="PUs" quantity="6"/>
+            <cost resource="PUs" quantity="5"/>
             <result resourceOrUnit="Nobori" quantity="1"/>
         </productionRule>
         <productionRule name="buySamurai">
-            <cost resource="PUs" quantity="8"/>
+            <cost resource="PUs" quantity="5"/>
             <result resourceOrUnit="Samurai" quantity="1"/>
         </productionRule>
         <productionRule name="buyMawari">
-            <cost resource="PUs" quantity="7"/>
+            <cost resource="PUs" quantity="5"/>
             <result resourceOrUnit="Mawari" quantity="1"/>
         </productionRule>
         <productionRule name="buyNinja">
-            <cost resource="PUs" quantity="9"/>
+            <cost resource="PUs" quantity="6"/>
             <result resourceOrUnit="Ninja" quantity="1"/>
         </productionRule>
 
-        <productionFrontier name="Master_production">
+        <!-- specialized units -->
+        <productionRule name="buyBoeiBushi">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Boei-Bushi" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiBushi">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Tsumi-Bushi" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyBoeiTeppo">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Boei-Teppo" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiTeppo">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Tsumi-Teppo" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyBoeiKyudoka">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Boei-Kyudoka" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiKyudoka">
+            <cost resource="PUs" quantity="3"/>
+            <result resourceOrUnit="Tsumi-Kyudoka" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyEritoNobori">
+            <cost resource="PUs" quantity="5"/>
+            <result resourceOrUnit="Erito-Nobori" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyEritoSamurai">
+            <cost resource="PUs" quantity="5"/>
+            <result resourceOrUnit="Erito-Samurai" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiSamurai">
+            <cost resource="PUs" quantity="5"/>
+            <result resourceOrUnit="Tsumi-Samurai" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiMawari">
+            <cost resource="PUs" quantity="5"/>
+            <result resourceOrUnit="Tsumi-Mawari" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyBoeiNinja">
+            <cost resource="PUs" quantity="6"/>
+            <result resourceOrUnit="Boei-Ninja" quantity="1"/>
+        </productionRule>
+        <productionRule name="buyTsumiNinja">
+            <cost resource="PUs" quantity="6"/>
+            <result resourceOrUnit="Tsumi-Ninja" quantity="1"/>
+        </productionRule>
+
+        <productionFrontier name="Oda_production">
             <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyEritoNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Miyoshi_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyBoeiKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Chosokabe_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyBoeiTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Otomo_production">
+            <frontierRules name="buyBoeiBushi"/>
             <frontierRules name="buyTeppo"/>
             <frontierRules name="buyKyudoka"/>
             <frontierRules name="buyRonin"/>
@@ -402,95 +558,196 @@
             <frontierRules name="buyNinja"/>
         </productionFrontier>
 
-        <playerProduction player="Oda" frontier="Master_production"/>
-        <playerProduction player="Miyoshi" frontier="Master_production"/>
-        <playerProduction player="Chosokabe" frontier="Master_production"/>
-        <playerProduction player="Otomo" frontier="Master_production"/>
-        <playerProduction player="Shimazu" frontier="Master_production"/>
-        <playerProduction player="Mori" frontier="Master_production"/>
-        <playerProduction player="Azai" frontier="Master_production"/>
-        <playerProduction player="Uesugi" frontier="Master_production"/>
-        <playerProduction player="Date" frontier="Master_production"/>
-        <playerProduction player="Hojo" frontier="Master_production"/>
-        <playerProduction player="Takeda" frontier="Master_production"/>
-        <playerProduction player="Tokugawa" frontier="Master_production"/>
+        <productionFrontier name="Shimazu_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buyTsumiSamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Mori_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyTsumiKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Azai_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buyEritoSamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Uesugi_production">
+            <frontierRules name="buyTsumiBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Date_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTsumiTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Hojo_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyTsumiNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Takeda_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyTsumiMawari"/>
+            <frontierRules name="buyNinja"/>
+        </productionFrontier>
+
+        <productionFrontier name="Tokugawa_production">
+            <frontierRules name="buyBushi"/>
+            <frontierRules name="buyTeppo"/>
+            <frontierRules name="buyKyudoka"/>
+            <frontierRules name="buyRonin"/>
+            <frontierRules name="buyNobori"/>
+            <frontierRules name="buySamurai"/>
+            <frontierRules name="buyMawari"/>
+            <frontierRules name="buyBoeiNinja"/>
+        </productionFrontier>
+
+        <playerProduction player="Oda" frontier="Oda_production"/>
+        <playerProduction player="Miyoshi" frontier="Miyoshi_production"/>
+        <playerProduction player="Chosokabe" frontier="Chosokabe_production"/>
+        <playerProduction player="Otomo" frontier="Otomo_production"/>
+        <playerProduction player="Shimazu" frontier="Shimazu_production"/>
+        <playerProduction player="Mori" frontier="Mori_production"/>
+        <playerProduction player="Azai" frontier="Azai_production"/>
+        <playerProduction player="Uesugi" frontier="Uesugi_production"/>
+        <playerProduction player="Date" frontier="Date_production"/>
+        <playerProduction player="Hojo" frontier="Hojo_production"/>
+        <playerProduction player="Takeda" frontier="Takeda_production"/>
+        <playerProduction player="Tokugawa" frontier="Tokugawa_production"/>
     </production>
 
     <technology>
         <technologies>
             <techname name="mechanizedInfantry"/>
             <techname name="isVassal"/>
+            <techname name="isTraitor"/>
         </technologies>
         <playerTech player="Oda">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Miyoshi">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Chosokabe">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Shimazu">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Otomo">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Mori">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Azai">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Uesugi">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Date">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Hojo">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Takeda">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
         <playerTech player="Tokugawa">
             <category name="Technology Advances">
                 <tech name="mechanizedInfantry"/>
                 <tech name="isVassal"/>
+                <tech name="isTraitor"/>
             </category>
         </playerTech>
     </technology>
@@ -658,21 +915,18 @@
             <option name="defense" value="3"/>
             <option name="movement" value="1"/>
             <option name="isLandTransportable" value="true"/>
-            <option name="maxBuiltPerPlayer" value="40"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Teppo" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="5"/>
-            <option name="defense" value="3"/>
+            <option name="attack" value="4"/>
+            <option name="defense" value="2"/>
             <option name="movement" value="1"/>
             <option name="isLandTransportable" value="true"/>
-            <option name="maxBuiltPerPlayer" value="20"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Kyudoka" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="3"/>
-            <option name="defense" value="5"/>
+            <option name="attack" value="2"/>
+            <option name="defense" value="4"/>
             <option name="movement" value="1"/>
             <option name="isLandTransportable" value="true"/>
-            <option name="maxBuiltPerPlayer" value="20"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Ronin" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="5"/>
@@ -681,13 +935,13 @@
             <option name="isConstruction" value="true"/>
             <option name="constructionType" value="Ronin"/>
             <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
-            <option name="maxConstructionsPerTypePerTerr" value="99"/>
+	        <option name="maxConstructionsPerTypePerTerr" value="99"/>            
             <option name="isLandTransportable" value="true"/>
-            <option name="maxBuiltPerPlayer" value="99"/>
+            <option name="createsResourcesList" value="-2:PUs"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Nobori" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="2"/>
-            <option name="defense" value="2"/>
+            <option name="attack" value="3"/>
+            <option name="defense" value="3"/>
             <option name="movement" value="1"/>
             <option name="isLandTransportable" value="true"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
@@ -698,26 +952,22 @@
             <option name="defense" value="6"/>
             <option name="movement" value="1"/>
             <option name="isLandTransportable" value="true"/>
-            <option name="maxBuiltPerPlayer" value="10"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Mawari" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="6"/>
-            <option name="defense" value="6"/>
+            <option name="attack" value="7"/>
+            <option name="defense" value="5"/>
             <option name="movement" value="2"/>
             <option name="canBlitz" value="true"/>
             <option name="isLandTransport" value="true"/>
-            <option name="maxBuiltPerPlayer" value="10"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Ninja" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="4"/>
             <option name="defense" value="4"/>
             <option name="movement" value="3"/>
             <option name="canBlitz" value="true"/>
-            <option name="maxBuiltPerPlayer" value="6"/>
             <option name="chooseBestRoll" value="true"/>
             <option name="attackRolls" value="2"/>
-            <option name="defenseRolls" value="2"/>
-            <option name="UnitPlacementOnlyAllowedIn" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="defenseRolls" value="2"/>            
         </attachment>
         <attachment name="unitAttachment" attachTo="Sashimono" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="isFactory" value="true"/>
@@ -740,6 +990,89 @@
             <option name="repairsUnits" value="1:Kenin"/>
             <option name="UnitPlacementOnlyAllowedIn" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
+        </attachment>
+
+        <!-- unit attachments (special) -->
+        <attachment name="unitAttachment" attachTo="Boei-Bushi" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="3"/>
+            <option name="defense" value="4"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Bushi" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="4"/>
+            <option name="defense" value="3"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Boei-Teppo" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="4"/>
+            <option name="defense" value="3"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Teppo" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="5"/>
+            <option name="defense" value="2"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Boei-Kyudoka" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="2"/>
+            <option name="defense" value="5"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Kyudoka" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="3"/>
+            <option name="defense" value="4"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Erito-Nobori" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="3"/>
+            <option name="defense" value="3"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+            <option name="createsUnitsList" value="2:Ashigaru"/>
+            <option name="maxBuiltPerPlayer" value="8"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Erito-Samurai" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="6"/>
+            <option name="defense" value="6"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Samurai" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="7"/>
+            <option name="defense" value="6"/>
+            <option name="movement" value="1"/>
+            <option name="isLandTransportable" value="true"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Mawari" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="8"/>
+            <option name="defense" value="5"/>
+            <option name="movement" value="2"/>
+            <option name="canBlitz" value="true"/>
+            <option name="isLandTransport" value="true"/>            
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Boei-Ninja" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="4"/>
+            <option name="defense" value="5"/>
+            <option name="movement" value="3"/>
+            <option name="canBlitz" value="true"/>
+            <option name="chooseBestRoll" value="true"/>
+            <option name="attackRolls" value="2"/>
+            <option name="defenseRolls" value="2"/>
+        </attachment>
+        <attachment name="unitAttachment" attachTo="Tsumi-Ninja" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+            <option name="attack" value="5"/>
+            <option name="defense" value="4"/>
+            <option name="movement" value="3"/>
+            <option name="canBlitz" value="true"/>
+            <option name="chooseBestRoll" value="true"/>
+            <option name="attackRolls" value="2"/>
+            <option name="defenseRolls" value="2"/>
         </attachment>
 
         <!-- unit attachments (samurai warriors) -->
@@ -791,7 +1124,7 @@
             <option name="repairsUnits" value="1:Saika-Magoichi"/>
             <option name="UnitPlacementOnlyAllowedIn" value="Chosokabe"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
-            <option name="createsUnitsList" value="1:Teppo"/>
+            <option name="createsUnitsList" value="1:Boei-Teppo"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Akechi-Mitsuhide" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="9"/>
@@ -811,7 +1144,7 @@
             <option name="repairsUnits" value="1:Date-Masamune"/>
             <option name="UnitPlacementOnlyAllowedIn" value="Date"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
-            <option name="createsUnitsList" value="1:Teppo"/>
+            <option name="createsUnitsList" value="1:Tsumi-Teppo"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Katakura-Kojuro" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="9"/>
@@ -884,7 +1217,7 @@
             <option name="repairsUnits" value="1:Matsunaga-Hisahide"/>
             <option name="UnitPlacementOnlyAllowedIn" value="Miyoshi"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
-            <option name="createsUnitsList" value="1:Kyudoka"/>
+            <option name="createsUnitsList" value="1:Boei-Kyudoka"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Tomomichi-Ishinari" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="9"/>
@@ -984,7 +1317,7 @@
             <option name="hitPoints" value="3"/>
             <option name="repairsUnits" value="1:Tachibana-Ginchiyo"/>
             <option name="UnitPlacementOnlyAllowedIn" value="Otomo"/>
-            <option name="createsUnitsList" value="1:Bushi"/>
+            <option name="createsUnitsList" value="1:Boei-Bushi"/>
             <option name="createsUnitsList" value="2:Ashigaru"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Shimazu-Yoshihiro" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -1321,26 +1654,70 @@
             <option name="uses" value="1"/>
         </attachment>
 
-        <!-- Support Attachments (basic units) -->
+        <!-- Support Attachments (basic/special units) -->
         <attachment name="supportAttachmentNobori" attachTo="Nobori" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-            <option name="unitType" value="Ashigaru:Bushi:Teppo:Kyudoka:Ronin:Samurai:Mawari:Ninja"/>
+            <option name="unitType" value="Ashigaru"/>
             <option name="faction" value="allied"/>
-            <option name="side" value="offence:defence"/>
+            <option name="side" value="defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
-            <option name="number" value="15"/>
-            <option name="bonusType" value="NoboriBonus"/>
-            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Resolve"/>
+            <option name="players" value="Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
-        <attachment name="supportAttachmentSamurai" attachTo="Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+        <attachment name="supportAttachmentEritoNobori" attachTo="Erito-Nobori" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
             <option name="unitType" value="Ashigaru"/>
             <option name="faction" value="allied"/>
             <option name="side" value="offence:defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Resolve"/>
+            <option name="players" value="Oda"/>
+            <option name="impArtTech" value="false"/>
+        </attachment>        
+        <attachment name="supportAttachmentSamurai" attachTo="Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+            <option name="unitType" value="Ashigaru"/>
+            <option name="faction" value="allied"/>
+            <option name="side" value="offence"/>
+            <option name="dice" value="strength"/>
+            <option name="bonus" value="1"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Courage"/>
+            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Mori:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="impArtTech" value="false"/>
+        </attachment>
+        <attachment name="supportAttachmentTsumiSamurai" attachTo="Tsumi-Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+            <option name="unitType" value="Ashigaru"/>
+            <option name="faction" value="allied"/>
+            <option name="side" value="offence"/>
+            <option name="dice" value="strength"/>
+            <option name="bonus" value="1"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Courage"/>
+            <option name="players" value="Shimazu"/>
+            <option name="impArtTech" value="false"/>
+        </attachment>
+        <attachment name="supportAttachmentEritoSamurai" attachTo="Erito-Samurai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+            <option name="unitType" value="Ashigaru"/>
+            <option name="faction" value="allied"/>
+            <option name="side" value="offence:defence"/>
+            <option name="dice" value="strength"/>
+            <option name="bonus" value="1"/>
+            <option name="number" value="10"/>
+            <option name="bonusType" value="Courage"/>
+            <option name="players" value="Azai"/>
+            <option name="impArtTech" value="false"/>
+        </attachment>
+        <attachment name="supportAttachmentNinja" attachTo="Ninja" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+            <option name="unitType" value="Ashigaru"/>
+            <option name="faction" value="enemy"/>
+            <option name="side" value="offence"/>
+            <option name="dice" value="strength"/>
+            <option name="bonus" value="-1"/>
             <option name="number" value="5"/>
-            <option name="bonusType" value="SamuraiBonus"/>
+            <option name="bonusType" value="Fear"/>
             <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1351,7 +1728,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="30"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1364,7 +1741,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Azai"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1375,7 +1752,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Azai"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1386,7 +1763,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Azai"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1397,7 +1774,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Chosokabe"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1408,7 +1785,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Chosokabe"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1419,7 +1796,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Chosokabe"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1430,7 +1807,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Date"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1441,7 +1818,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Date"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1452,7 +1829,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Date"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1463,7 +1840,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Hojo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1473,8 +1850,8 @@
             <option name="side" value="offence:defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
-            <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="number" value="150"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Hojo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1485,7 +1862,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Hojo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1496,7 +1873,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Miyoshi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1507,7 +1884,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Miyoshi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1518,7 +1895,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Miyoshi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1529,7 +1906,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Mori"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1540,7 +1917,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Mori"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1551,7 +1928,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Mori"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1562,7 +1939,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Oda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1573,7 +1950,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Oda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1584,7 +1961,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Oda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1595,7 +1972,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Otomo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1606,7 +1983,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Otomo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1617,7 +1994,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Otomo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1628,7 +2005,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Shimazu"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1639,7 +2016,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Shimazu"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1650,7 +2027,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Shimazu"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1661,7 +2038,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Takeda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1672,7 +2049,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Takeda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1683,7 +2060,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Takeda"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1694,7 +2071,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1704,8 +2081,8 @@
             <option name="side" value="offence:defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
-            <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="number" value="150"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1716,7 +2093,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1727,7 +2104,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Uesugi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1738,7 +2115,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Uesugi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1749,7 +2126,7 @@
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
             <option name="number" value="200"/>
-            <option name="bonusType" value="HeroBonus"/>
+            <option name="bonusType" value="Honor"/>
             <option name="players" value="Uesugi"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1761,8 +2138,8 @@
             <option name="side" value="offence:defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
-            <option name="number" value="6"/>
-            <option name="bonusType" value="NinjaBonus"/>
+            <option name="number" value="50"/>
+            <option name="bonusType" value="Ninpo"/>
             <option name="players" value="Hojo"/>
             <option name="impArtTech" value="false"/>
         </attachment>
@@ -1772,18 +2149,27 @@
             <option name="side" value="offence:defence"/>
             <option name="dice" value="strength"/>
             <option name="bonus" value="1"/>
-            <option name="number" value="6"/>
-            <option name="bonusType" value="NinjaBonus"/>
+            <option name="number" value="50"/>
+            <option name="bonusType" value="Ninpo"/>
             <option name="players" value="Tokugawa"/>
             <option name="impArtTech" value="false"/>
         </attachment>
 
-        <!-- Samurai Warrior Triggers to spawn up to two more warriors per clan per three rounds provided the capital is retained -->
+        <!-- Samurai Warrior Triggers to spawn special heroes per three rounds provided the clan capital is retained -->
         <!-- Oda -->
+        <attachment name="conditionAttachmentOdaLord" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentOdaLord" attachTo="Oda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentOdaLord"/>
+            <option name="placement" value="Oda:Oda-Nobunaga"/>
+            <option name="when" value="before:OdaPurchase"/>
+	        <option name="notification" value="SpawnNobunaga"/>
+        </attachment>
         <attachment name="conditionAttachmentOdaOfficer1" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Oda"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentOdaOfficer1" attachTo="Oda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentOdaOfficer1"/>
@@ -1794,7 +2180,7 @@
         <attachment name="conditionAttachmentOdaOfficer2" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Oda"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentOdaOfficer2" attachTo="Oda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentOdaOfficer2"/>
@@ -1804,10 +2190,19 @@
         </attachment>
 
         <!-- Miyoshi -->
+        <attachment name="conditionAttachmentMiyoshiLord" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentMiyoshiLord" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentMiyoshiLord"/>
+            <option name="placement" value="Miyoshi:Miyoshi-Masanaga"/>
+            <option name="when" value="before:MiyoshiPurchase"/>
+	        <option name="notification" value="SpawnMasanaga"/>
+        </attachment>
         <attachment name="conditionAttachmentMiyoshiOfficer1" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Miyoshi"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentMiyoshiOfficer1" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentMiyoshiOfficer1"/>
@@ -1818,7 +2213,7 @@
         <attachment name="conditionAttachmentMiyoshiOfficer2" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Miyoshi"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentMiyoshiOfficer2" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentMiyoshiOfficer2"/>
@@ -1828,10 +2223,19 @@
         </attachment>
 
         <!-- Chosokabe -->
+        <attachment name="conditionAttachmentChosokabeLord" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentChosokabeLord" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentChosokabeLord"/>
+            <option name="placement" value="Chosokabe:Chosokabe-Motochika"/>
+            <option name="when" value="before:ChosokabePurchase"/>
+	        <option name="notification" value="SpawnMotochika"/>
+        </attachment>
         <attachment name="conditionAttachmentChosokabeOfficer1" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Chosokabe"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentChosokabeOfficer1" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentChosokabeOfficer1"/>
@@ -1842,7 +2246,7 @@
         <attachment name="conditionAttachmentChosokabeOfficer2" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Chosokabe"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentChosokabeOfficer2" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentChosokabeOfficer2"/>
@@ -1852,10 +2256,19 @@
         </attachment>
 
         <!-- Otomo -->
+        <attachment name="conditionAttachmentOtomoLord" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentOtomoLord" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentOtomoLord"/>
+            <option name="placement" value="Otomo:Otomo-Yoshishige"/>
+            <option name="when" value="before:OtomoPurchase"/>
+	        <option name="notification" value="SpawnYoshishige"/>
+        </attachment>
         <attachment name="conditionAttachmentOtomoOfficer1" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Otomo"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentOtomoOfficer1" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentOtomoOfficer1"/>
@@ -1866,7 +2279,7 @@
         <attachment name="conditionAttachmentOtomoOfficer2" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Otomo"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentOtomoOfficer2" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentOtomoOfficer2"/>
@@ -1876,10 +2289,19 @@
         </attachment>
 
         <!-- Shimazu -->
+        <attachment name="conditionAttachmentShimazuLord" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentShimazuLord" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentShimazuLord"/>
+            <option name="placement" value="Shimazu:Shimazu-Yoshihiro"/>
+            <option name="when" value="before:ShimazuPurchase"/>
+	        <option name="notification" value="SpawnYoshihiro"/>
+        </attachment>
         <attachment name="conditionAttachmentShimazuOfficer1" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Shimazu"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentShimazuOfficer1" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentShimazuOfficer1"/>
@@ -1890,7 +2312,7 @@
         <attachment name="conditionAttachmentShimazuOfficer2" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Shimazu"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentShimazuOfficer2" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentShimazuOfficer2"/>
@@ -1900,10 +2322,19 @@
         </attachment>
 
         <!-- Mori -->
+        <attachment name="conditionAttachmentMoriLord" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentMoriLord" attachTo="Mori" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentMoriLord"/>
+            <option name="placement" value="Mori:Mori-Motonari"/>
+            <option name="when" value="before:MoriPurchase"/>
+	        <option name="notification" value="SpawnMotonari"/>
+        </attachment>
         <attachment name="conditionAttachmentMoriOfficer1" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Mori"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentMoriOfficer1" attachTo="Mori" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentMoriOfficer1"/>
@@ -1914,7 +2345,7 @@
         <attachment name="conditionAttachmentMoriOfficer2" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Mori"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentMoriOfficer2" attachTo="Mori" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentMoriOfficer2"/>
@@ -1924,10 +2355,19 @@
         </attachment>
 
         <!-- Azai -->
+        <attachment name="conditionAttachmentAzaiLord" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentAzaiLord" attachTo="Azai" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentAzaiLord"/>
+            <option name="placement" value="Azai:Azai-Nagamasa"/>
+            <option name="when" value="before:AzaiPurchase"/>
+	        <option name="notification" value="SpawnNagamasa"/>
+        </attachment>
         <attachment name="conditionAttachmentAzaiOfficer1" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Azai"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentAzaiOfficer1" attachTo="Azai" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentAzaiOfficer1"/>
@@ -1938,7 +2378,7 @@
         <attachment name="conditionAttachmentAzaiOfficer2" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Azai"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentAzaiOfficer2" attachTo="Azai" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentAzaiOfficer2"/>
@@ -1948,10 +2388,19 @@
         </attachment>
 
         <!-- Uesugi -->
+        <attachment name="conditionAttachmentUesugiLord" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentUesugiLord" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentUesugiLord"/>
+            <option name="placement" value="Uesugi:Uesugi-Kenshin"/>
+            <option name="when" value="before:UesugiPurchase"/>
+	        <option name="notification" value="SpawnKenshin"/>
+        </attachment>
         <attachment name="conditionAttachmentUesugiOfficer1" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Uesugi"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentUesugiOfficer1" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentUesugiOfficer1"/>
@@ -1962,7 +2411,7 @@
         <attachment name="conditionAttachmentUesugiOfficer2" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Uesugi"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentUesugiOfficer2" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentUesugiOfficer2"/>
@@ -1972,10 +2421,19 @@
         </attachment>
 
         <!-- Date -->
+        <attachment name="conditionAttachmentDateLord" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentDateLord" attachTo="Date" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentDateLord"/>
+            <option name="placement" value="Date:Date-Masamune"/>
+            <option name="when" value="before:DatePurchase"/>
+	        <option name="notification" value="SpawnMasamune"/>
+        </attachment>
         <attachment name="conditionAttachmentDateOfficer1" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Date"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentDateOfficer1" attachTo="Date" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentDateOfficer1"/>
@@ -1986,7 +2444,7 @@
         <attachment name="conditionAttachmentDateOfficer2" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Date"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentDateOfficer2" attachTo="Date" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentDateOfficer2"/>
@@ -1996,10 +2454,19 @@
         </attachment>
 
         <!-- Hojo -->
+        <attachment name="conditionAttachmentHojoLord" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentHojoLord" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentHojoLord"/>
+            <option name="placement" value="Hojo:Hojo-Ujiyasu"/>
+            <option name="when" value="before:HojoPurchase"/>
+	        <option name="notification" value="SpawnUjiyasu"/>
+        </attachment>
         <attachment name="conditionAttachmentHojoOfficer1" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Hojo"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentHojoOfficer1" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentHojoOfficer1"/>
@@ -2010,7 +2477,7 @@
         <attachment name="conditionAttachmentHojoOfficer2" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Hojo"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentHojoOfficer2" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentHojoOfficer2"/>
@@ -2020,10 +2487,19 @@
         </attachment>
 
         <!-- Takeda -->
+        <attachment name="conditionAttachmentTakedaLord" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentTakedaLord" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentTakedaLord"/>
+            <option name="placement" value="Takeda:Takeda-Shingen"/>
+            <option name="when" value="before:TakedaPurchase"/>
+	        <option name="notification" value="SpawnShingen"/>
+        </attachment>
         <attachment name="conditionAttachmentTakedaOfficer1" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Takeda"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentTakedaOfficer1" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentTakedaOfficer1"/>
@@ -2034,7 +2510,7 @@
         <attachment name="conditionAttachmentTakedaOfficer2" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Takeda"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentTakedaOfficer2" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentTakedaOfficer2"/>
@@ -2044,10 +2520,19 @@
         </attachment>
 
         <!-- Tokugawa -->
+        <attachment name="conditionAttachmentTokugawaLord" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentTokugawaLord" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentTokugawaLord"/>
+            <option name="placement" value="Tokugawa:Tokugawa-Ieyasu"/>
+            <option name="when" value="before:TokugawaPurchase"/>
+	        <option name="notification" value="SpawnIeyasu"/>
+        </attachment>
         <attachment name="conditionAttachmentTokugawaOfficer1" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Tokugawa"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="3"/>
+            <option name="rounds" value="4"/>
         </attachment>
         <attachment name="triggerAttachmentTokugawaOfficer1" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentTokugawaOfficer1"/>
@@ -2058,7 +2543,7 @@
         <attachment name="conditionAttachmentTokugawaOfficer2" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="1:Tokugawa"/>
             <option name="techs" value="isVassal" count="0"/>
-            <option name="rounds" value="6"/>
+            <option name="rounds" value="7"/>
         </attachment>
         <attachment name="triggerAttachmentTokugawaOfficer2" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
             <option name="conditions" value="conditionAttachmentTokugawaOfficer2"/>
@@ -2067,172 +2552,124 @@
 	        <option name="notification" value="SpawnTadakatsu"/>
         </attachment>
 
-        <!-- Ronin bail after a round of service -->
-        <attachment name="conditionAttachment_OdaRoninBail" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <!-- list conditions for not having the traitor tech -->
+        <attachment name="conditionAttachment_OdaIsNotTraitor" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_OdaRoninBail" attachTo="Oda" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_OdaRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:OdaPurchase"/>
+        <attachment name="conditionAttachment_MiyoshiIsNotTraitor" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="conditionAttachment_MiyoshiRoninBail" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <attachment name="conditionAttachment_ChosokabeIsNotTraitor" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_MiyoshiRoninBail" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_MiyoshiRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:MiyoshiPurchase"/>
+        <attachment name="conditionAttachment_OtomoIsNotTraitor" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="conditionAttachment_ChosokabeRoninBail" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <attachment name="conditionAttachment_ShimazuIsNotTraitor" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_ChosokabeRoninBail" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_ChosokabeRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:ChosokabePurchase"/>
+        <attachment name="conditionAttachment_MoriIsNotTraitor" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="conditionAttachment_ShimazuRoninBail" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <attachment name="conditionAttachment_AzaiIsNotTraitor" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_ShimazuRoninBail" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_ShimazuRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:ShimazuPurchase"/>
+        <attachment name="conditionAttachment_UesugiIsNotTraitor" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="conditionAttachment_OtomoRoninBail" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <attachment name="conditionAttachment_DateIsNotTraitor" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_OtomoRoninBail" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_OtomoRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:OtomoPurchase"/>
+        <attachment name="conditionAttachment_HojoIsNotTraitor" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="conditionAttachment_MoriRoninBail" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
+        <attachment name="conditionAttachment_TakedaIsNotTraitor" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
-        <attachment name="triggerAttachment_MoriRoninBail" attachTo="Mori" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_MoriRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:MoriPurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_AzaiRoninBail" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_AzaiRoninBail" attachTo="Azai" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_AzaiRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:AzaiPurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_UesugiRoninBail" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_UesugiRoninBail" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_UesugiRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:UesugiPurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_DateRoninBail" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_DateRoninBail" attachTo="Date" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_DateRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:DatePurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_HojoRoninBail" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_HojoRoninBail" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_HojoRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:HojoPurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_TakedaRoninBail" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_TakedaRoninBail" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_TakedaRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:TakedaPurchase"/>
-        </attachment>
-        <attachment name="conditionAttachment_TokugawaRoninBail" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">	        
-	        <option name="switch" value="true"/>
-        </attachment>
-        <attachment name="triggerAttachment_TokugawaRoninBail" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachment_TokugawaRoninBail"/>            
-            <option name="removeUnits" value="all:Ronin" count="99"/>
-            <option name="when" value="before:TokugawaPurchase"/>
+        <attachment name="conditionAttachment_TokugawaIsNotTraitor" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">            
+            <option name="techs" value="isTraitor" count="0"/>
         </attachment>
 
         <!-- list conditions for either having or not having the vassal tech -->
         <attachment name="conditionAttachment_OdaIsVassal" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_OdaIsNotVassal" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_MiyoshiIsVassal" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_MiyoshiIsNotVassal" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_ChosokabeIsVassal" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_ChosokabeIsNotVassal" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_OtomoIsVassal" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_OtomoIsNotVassal" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_ShimazuIsVassal" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_ShimazuIsNotVassal" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_MoriIsVassal" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_MoriIsNotVassal" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_AzaiIsVassal" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_AzaiIsNotVassal" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_UesugiIsVassal" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_UesugiIsNotVassal" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_DateIsVassal" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_DateIsNotVassal" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_HojoIsVassal" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_HojoIsNotVassal" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_TakedaIsVassal" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_TakedaIsNotVassal" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="techs" value="isVassal" count="0"/>
         </attachment>
         <attachment name="conditionAttachment_TokugawaIsVassal" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaIsNotTraitor"/>
             <option name="techs" value="isVassal" count="1"/>
         </attachment>
         <attachment name="conditionAttachment_TokugawaIsNotVassal" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -2321,7 +2758,7 @@
             <option name="tech" value="isVassal"/>
             <option name="placement" value="Shimazu:Sashimono"/>
             <option name="placement" value="Shimazu:Kenin"/>
-            <option name="placement" value="Shimazu:Samurai"/>
+            <option name="placement" value="Shimazu:Tsumi-Samurai"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
@@ -2348,7 +2785,7 @@
             <option name="tech" value="isVassal"/>
             <option name="placement" value="Azai:Sashimono"/>
             <option name="placement" value="Azai:Kenin"/>
-            <option name="placement" value="Azai:Samurai"/>
+            <option name="placement" value="Azai:Erito-Samurai"/>
             <option name="placement" value="Azai:Ashigaru"/>
             <option name="placement" value="Azai:Ashigaru"/>
             <option name="placement" value="Azai:Ashigaru"/>
@@ -2399,8 +2836,9 @@
             <option name="placement" value="Tokugawa:Ashigaru"/>
         </attachment>
 
-        <!-- list triggers for troop placements after being vassalized a second or greater time: note these are manually fired from below -->
+        <!-- list triggers for troop placements after being vassalized a second time/betraying your former lord: note these are manually fired from below -->
         <attachment name="triggerAttachment_OdaVassalizedAgain" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Oda:Sashimono"/>
             <option name="placement" value="Oda:Samurai"/>
             <option name="placement" value="Oda:Ashigaru"/>
@@ -2408,6 +2846,7 @@
             <option name="placement" value="Oda:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_MiyoshiVassalizedAgain" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Miyoshi:Sashimono"/>
             <option name="placement" value="Miyoshi:Samurai"/>
             <option name="placement" value="Miyoshi:Ashigaru"/>
@@ -2415,6 +2854,7 @@
             <option name="placement" value="Miyoshi:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_ChosokabeVassalizedAgain" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Chosokabe:Sashimono"/>
             <option name="placement" value="Chosokabe:Samurai"/>
             <option name="placement" value="Chosokabe:Ashigaru"/>
@@ -2422,13 +2862,15 @@
             <option name="placement" value="Chosokabe:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_ShimazuVassalizedAgain" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Shimazu:Sashimono"/>
-            <option name="placement" value="Shimazu:Samurai"/>
+            <option name="placement" value="Shimazu:Tsumi-Samurai"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
             <option name="placement" value="Shimazu:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_OtomoVassalizedAgain" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Otomo:Sashimono"/>
             <option name="placement" value="Otomo:Samurai"/>
             <option name="placement" value="Otomo:Ashigaru"/>
@@ -2436,6 +2878,7 @@
             <option name="placement" value="Otomo:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_MoriVassalizedAgain" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Mori:Sashimono"/>
             <option name="placement" value="Mori:Samurai"/>
             <option name="placement" value="Mori:Ashigaru"/>
@@ -2443,13 +2886,15 @@
             <option name="placement" value="Mori:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_AzaiVassalizedAgain" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Azai:Sashimono"/>
-            <option name="placement" value="Azai:Samurai"/>
+            <option name="placement" value="Azai:Erito-Samurai"/>
             <option name="placement" value="Azai:Ashigaru"/>
             <option name="placement" value="Azai:Ashigaru"/>
             <option name="placement" value="Azai:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_UesugiVassalizedAgain" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Uesugi:Sashimono"/>
             <option name="placement" value="Uesugi:Samurai"/>
             <option name="placement" value="Uesugi:Ashigaru"/>
@@ -2457,6 +2902,7 @@
             <option name="placement" value="Uesugi:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_DateVassalizedAgain" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Date:Sashimono"/>
             <option name="placement" value="Date:Samurai"/>
             <option name="placement" value="Date:Ashigaru"/>
@@ -2464,6 +2910,7 @@
             <option name="placement" value="Date:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_HojoVassalizedAgain" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Hojo:Sashimono"/>
             <option name="placement" value="Hojo:Samurai"/>
             <option name="placement" value="Hojo:Ashigaru"/>
@@ -2471,6 +2918,7 @@
             <option name="placement" value="Hojo:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_TakedaVassalizedAgain" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Takeda:Sashimono"/>
             <option name="placement" value="Takeda:Samurai"/>
             <option name="placement" value="Takeda:Ashigaru"/>
@@ -2478,6 +2926,7 @@
             <option name="placement" value="Takeda:Ashigaru"/>
         </attachment>
         <attachment name="triggerAttachment_TokugawaVassalizedAgain" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="tech" value="isTraitor"/>
             <option name="placement" value="Tokugawa:Sashimono"/>
             <option name="placement" value="Tokugawa:Samurai"/>
             <option name="placement" value="Tokugawa:Ashigaru"/>
@@ -38547,111 +38996,75 @@
         <unitInitialize>
             <!-- Oda -->
             <unitPlacement unitType="Sashimono" territory="Oda" quantity="1" owner="Oda"/>
-            <unitPlacement unitType="Oda-Nobunaga" territory="Oda" quantity="1" owner="Oda"/>
-            <unitPlacement unitType="Samurai" territory="Oda" quantity="2" owner="Oda"/>
-            <unitPlacement unitType="Nobori" territory="Oda" quantity="1" owner="Oda"/>
-            <unitPlacement unitType="Kyudoka" territory="Oda" quantity="3" owner="Oda"/>
-            <unitPlacement unitType="Teppo" territory="Oda" quantity="3" owner="Oda"/>
-            <unitPlacement unitType="Ashigaru" territory="Oda" quantity="5" owner="Oda"/>            
+            <unitPlacement unitType="Samurai" territory="Oda" quantity="1" owner="Oda"/>
+            <unitPlacement unitType="Erito-Nobori" territory="Oda" quantity="1" owner="Oda"/>
+            <unitPlacement unitType="Ashigaru" territory="Oda" quantity="2" owner="Oda"/>
 
             <!-- Miyoshi -->
             <unitPlacement unitType="Sashimono" territory="Miyoshi" quantity="1" owner="Miyoshi"/>
-            <unitPlacement unitType="Miyoshi-Masanaga" territory="Miyoshi" quantity="1" owner="Miyoshi"/>
-            <unitPlacement unitType="Samurai" territory="Miyoshi" quantity="2" owner="Miyoshi"/>
+            <unitPlacement unitType="Samurai" territory="Miyoshi" quantity="1" owner="Miyoshi"/>
             <unitPlacement unitType="Nobori" territory="Miyoshi" quantity="1" owner="Miyoshi"/>
-            <unitPlacement unitType="Kyudoka" territory="Miyoshi" quantity="3" owner="Miyoshi"/>
-            <unitPlacement unitType="Teppo" territory="Miyoshi" quantity="3" owner="Miyoshi"/>
-            <unitPlacement unitType="Ashigaru" territory="Miyoshi" quantity="5" owner="Miyoshi"/>
+            <unitPlacement unitType="Ashigaru" territory="Miyoshi" quantity="2" owner="Miyoshi"/>
 
             <!-- Chosokabe -->
             <unitPlacement unitType="Sashimono" territory="Chosokabe" quantity="1" owner="Chosokabe"/>
-            <unitPlacement unitType="Chosokabe-Motochika" territory="Chosokabe" quantity="1" owner="Chosokabe"/>
-            <unitPlacement unitType="Samurai" territory="Chosokabe" quantity="2" owner="Chosokabe"/>
+            <unitPlacement unitType="Samurai" territory="Chosokabe" quantity="1" owner="Chosokabe"/>
             <unitPlacement unitType="Nobori" territory="Chosokabe" quantity="1" owner="Chosokabe"/>
-            <unitPlacement unitType="Kyudoka" territory="Chosokabe" quantity="3" owner="Chosokabe"/>
-            <unitPlacement unitType="Teppo" territory="Chosokabe" quantity="3" owner="Chosokabe"/>
-            <unitPlacement unitType="Ashigaru" territory="Chosokabe" quantity="5" owner="Chosokabe"/>
+            <unitPlacement unitType="Ashigaru" territory="Chosokabe" quantity="2" owner="Chosokabe"/>
 
             <!-- Otomo -->
             <unitPlacement unitType="Sashimono" territory="Otomo" quantity="1" owner="Otomo"/>
-            <unitPlacement unitType="Otomo-Yoshishige" territory="Otomo" quantity="1" owner="Otomo"/>
-            <unitPlacement unitType="Samurai" territory="Otomo" quantity="2" owner="Otomo"/>
+            <unitPlacement unitType="Samurai" territory="Otomo" quantity="1" owner="Otomo"/>
             <unitPlacement unitType="Nobori" territory="Otomo" quantity="1" owner="Otomo"/>
-            <unitPlacement unitType="Kyudoka" territory="Otomo" quantity="3" owner="Otomo"/>
-            <unitPlacement unitType="Teppo" territory="Otomo" quantity="3" owner="Otomo"/>
-            <unitPlacement unitType="Ashigaru" territory="Otomo" quantity="5" owner="Otomo"/>
+            <unitPlacement unitType="Ashigaru" territory="Otomo" quantity="2" owner="Otomo"/>
 
             <!-- Shimazu -->
             <unitPlacement unitType="Sashimono" territory="Shimazu" quantity="1" owner="Shimazu"/>
-            <unitPlacement unitType="Shimazu-Yoshihiro" territory="Shimazu" quantity="1" owner="Shimazu"/>
-            <unitPlacement unitType="Samurai" territory="Shimazu" quantity="2" owner="Shimazu"/>
+            <unitPlacement unitType="Tsumi-Samurai" territory="Shimazu" quantity="1" owner="Shimazu"/>
             <unitPlacement unitType="Nobori" territory="Shimazu" quantity="1" owner="Shimazu"/>
-            <unitPlacement unitType="Kyudoka" territory="Shimazu" quantity="3" owner="Shimazu"/>
-            <unitPlacement unitType="Teppo" territory="Shimazu" quantity="3" owner="Shimazu"/>
-            <unitPlacement unitType="Ashigaru" territory="Shimazu" quantity="5" owner="Shimazu"/>
+            <unitPlacement unitType="Ashigaru" territory="Shimazu" quantity="2" owner="Shimazu"/>
 
             <!-- Mori -->
             <unitPlacement unitType="Sashimono" territory="Mori" quantity="1" owner="Mori"/>
-            <unitPlacement unitType="Mori-Motonari" territory="Mori" quantity="1" owner="Mori"/>
-            <unitPlacement unitType="Samurai" territory="Mori" quantity="2" owner="Mori"/>
+            <unitPlacement unitType="Samurai" territory="Mori" quantity="1" owner="Mori"/>
             <unitPlacement unitType="Nobori" territory="Mori" quantity="1" owner="Mori"/>
-            <unitPlacement unitType="Kyudoka" territory="Mori" quantity="3" owner="Mori"/>
-            <unitPlacement unitType="Teppo" territory="Mori" quantity="3" owner="Mori"/>
-            <unitPlacement unitType="Ashigaru" territory="Mori" quantity="5" owner="Mori"/>
+            <unitPlacement unitType="Ashigaru" territory="Mori" quantity="2" owner="Mori"/>
 
             <!-- Azai -->
             <unitPlacement unitType="Sashimono" territory="Azai" quantity="1" owner="Azai"/>
-            <unitPlacement unitType="Azai-Nagamasa" territory="Azai" quantity="1" owner="Azai"/>
-            <unitPlacement unitType="Samurai" territory="Azai" quantity="2" owner="Azai"/>
+            <unitPlacement unitType="Erito-Samurai" territory="Azai" quantity="1" owner="Azai"/>
             <unitPlacement unitType="Nobori" territory="Azai" quantity="1" owner="Azai"/>
-            <unitPlacement unitType="Kyudoka" territory="Azai" quantity="3" owner="Azai"/>
-            <unitPlacement unitType="Teppo" territory="Azai" quantity="3" owner="Azai"/>
-            <unitPlacement unitType="Ashigaru" territory="Azai" quantity="5" owner="Azai"/>
+            <unitPlacement unitType="Ashigaru" territory="Azai" quantity="2" owner="Azai"/>
 
             <!-- Uesugi -->
             <unitPlacement unitType="Sashimono" territory="Uesugi" quantity="1" owner="Uesugi"/>
-            <unitPlacement unitType="Uesugi-Kenshin" territory="Uesugi" quantity="1" owner="Uesugi"/>
-            <unitPlacement unitType="Samurai" territory="Uesugi" quantity="2" owner="Uesugi"/>
+            <unitPlacement unitType="Samurai" territory="Uesugi" quantity="1" owner="Uesugi"/>
             <unitPlacement unitType="Nobori" territory="Uesugi" quantity="1" owner="Uesugi"/>
-            <unitPlacement unitType="Kyudoka" territory="Uesugi" quantity="3" owner="Uesugi"/>
-            <unitPlacement unitType="Teppo" territory="Uesugi" quantity="3" owner="Uesugi"/>
-            <unitPlacement unitType="Ashigaru" territory="Uesugi" quantity="5" owner="Uesugi"/>
+            <unitPlacement unitType="Ashigaru" territory="Uesugi" quantity="2" owner="Uesugi"/>
 
             <!-- Date -->
             <unitPlacement unitType="Sashimono" territory="Date" quantity="1" owner="Date"/>
-            <unitPlacement unitType="Date-Masamune" territory="Date" quantity="1" owner="Date"/>
-            <unitPlacement unitType="Samurai" territory="Date" quantity="2" owner="Date"/>
+            <unitPlacement unitType="Samurai" territory="Date" quantity="1" owner="Date"/>
             <unitPlacement unitType="Nobori" territory="Date" quantity="1" owner="Date"/>
-            <unitPlacement unitType="Kyudoka" territory="Date" quantity="3" owner="Date"/>
-            <unitPlacement unitType="Teppo" territory="Date" quantity="3" owner="Date"/>
-            <unitPlacement unitType="Ashigaru" territory="Date" quantity="5" owner="Date"/>
+            <unitPlacement unitType="Ashigaru" territory="Date" quantity="2" owner="Date"/>
 
             <!-- Hojo -->
             <unitPlacement unitType="Sashimono" territory="Hojo" quantity="1" owner="Hojo"/>
-            <unitPlacement unitType="Hojo-Ujiyasu" territory="Hojo" quantity="1" owner="Hojo"/>
-            <unitPlacement unitType="Samurai" territory="Hojo" quantity="2" owner="Hojo"/>
+            <unitPlacement unitType="Samurai" territory="Hojo" quantity="1" owner="Hojo"/>
             <unitPlacement unitType="Nobori" territory="Hojo" quantity="1" owner="Hojo"/>
-            <unitPlacement unitType="Kyudoka" territory="Hojo" quantity="3" owner="Hojo"/>
-            <unitPlacement unitType="Teppo" territory="Hojo" quantity="3" owner="Hojo"/>
-            <unitPlacement unitType="Ashigaru" territory="Hojo" quantity="5" owner="Hojo"/>
+            <unitPlacement unitType="Ashigaru" territory="Hojo" quantity="2" owner="Hojo"/>
 
             <!-- Takeda -->
             <unitPlacement unitType="Sashimono" territory="Takeda" quantity="1" owner="Takeda"/>
-            <unitPlacement unitType="Takeda-Shingen" territory="Takeda" quantity="1" owner="Takeda"/>
-            <unitPlacement unitType="Samurai" territory="Takeda" quantity="2" owner="Takeda"/>
+            <unitPlacement unitType="Samurai" territory="Takeda" quantity="1" owner="Takeda"/>
             <unitPlacement unitType="Nobori" territory="Takeda" quantity="1" owner="Takeda"/>
-            <unitPlacement unitType="Kyudoka" territory="Takeda" quantity="3" owner="Takeda"/>
-            <unitPlacement unitType="Teppo" territory="Takeda" quantity="3" owner="Takeda"/>
-            <unitPlacement unitType="Ashigaru" territory="Takeda" quantity="5" owner="Takeda"/>
+            <unitPlacement unitType="Ashigaru" territory="Takeda" quantity="2" owner="Takeda"/>
 
             <!-- Tokugawa -->
             <unitPlacement unitType="Sashimono" territory="Tokugawa" quantity="1" owner="Tokugawa"/>
-            <unitPlacement unitType="Tokugawa-Ieyasu" territory="Tokugawa" quantity="1" owner="Tokugawa"/>
-            <unitPlacement unitType="Samurai" territory="Tokugawa" quantity="2" owner="Tokugawa"/>
+            <unitPlacement unitType="Samurai" territory="Tokugawa" quantity="1" owner="Tokugawa"/>
             <unitPlacement unitType="Nobori" territory="Tokugawa" quantity="1" owner="Tokugawa"/>
-            <unitPlacement unitType="Kyudoka" territory="Tokugawa" quantity="3" owner="Tokugawa"/>
-            <unitPlacement unitType="Teppo" territory="Tokugawa" quantity="3" owner="Tokugawa"/>
-            <unitPlacement unitType="Ashigaru" territory="Tokugawa" quantity="5" owner="Tokugawa"/>
+            <unitPlacement unitType="Ashigaru" territory="Tokugawa" quantity="2" owner="Tokugawa"/>
 
             <!-- Neutral Territories -->
             <unitPlacement unitType="Sashimono" territory="Osumi" quantity="1" owner="Neutral"/>
@@ -38811,18 +39224,18 @@
         </unitInitialize>
 
         <resourceInitialize>
-            <resourceGiven player="Oda" resource="PUs" quantity="25"/>
-            <resourceGiven player="Miyoshi" resource="PUs" quantity="25"/>
-            <resourceGiven player="Chosokabe" resource="PUs" quantity="25"/>
-            <resourceGiven player="Otomo" resource="PUs" quantity="25"/>
-            <resourceGiven player="Shimazu" resource="PUs" quantity="25"/>
-            <resourceGiven player="Mori" resource="PUs" quantity="25"/>
-            <resourceGiven player="Azai" resource="PUs" quantity="25"/>
-            <resourceGiven player="Uesugi" resource="PUs" quantity="25"/>
-            <resourceGiven player="Date" resource="PUs" quantity="25"/>
-            <resourceGiven player="Hojo" resource="PUs" quantity="25"/>
-            <resourceGiven player="Takeda" resource="PUs" quantity="25"/>
-            <resourceGiven player="Tokugawa" resource="PUs" quantity="25"/>
+            <resourceGiven player="Oda" resource="PUs" quantity="50"/>
+            <resourceGiven player="Miyoshi" resource="PUs" quantity="50"/>
+            <resourceGiven player="Chosokabe" resource="PUs" quantity="50"/>
+            <resourceGiven player="Otomo" resource="PUs" quantity="50"/>
+            <resourceGiven player="Shimazu" resource="PUs" quantity="50"/>
+            <resourceGiven player="Mori" resource="PUs" quantity="50"/>
+            <resourceGiven player="Azai" resource="PUs" quantity="50"/>
+            <resourceGiven player="Uesugi" resource="PUs" quantity="50"/>
+            <resourceGiven player="Date" resource="PUs" quantity="50"/>
+            <resourceGiven player="Hojo" resource="PUs" quantity="50"/>
+            <resourceGiven player="Takeda" resource="PUs" quantity="50"/>
+            <resourceGiven player="Tokugawa" resource="PUs" quantity="50"/>
         </resourceInitialize>
 
         <relationshipInitialize>
@@ -38954,8 +39367,9 @@
                                 </p><br>
                                 <h3 style="font-size:16px;color:F0D06B">Victory Conditions:</h3>
                                 <p style="font-size:14px;color:FFFFFF">
-                                    This means that no player is ever out of the game. Once you are defeated, you simply switch sides. If one of your allies wins then you win a minor victory.
-                                    But there can only be one shogun. If a player conquers 7 rival clans that player achieves Total Victory, becoming the shogun. Any players who are not the first 7 to join the shogun have lost.
+                                    Once you are defeated, you simply switch sides. If one of your allies wins then you win a minor victory.
+                                    Beware! No one trusts a traitor, and if you or another clan switch sides to many times, you will likely be shown no mercy should your capital fall again...
+                                    There can only be one shogun. If a player conquers 7 rival clans that player achieves Total Victory, becoming the shogun. Any players who are not the first 7 to join the shogun have lost.
                                 </p><br>
                                 <h3 style="font-size:16px;color:F0D06B">Other Game Modes:</h3>
                                 <p style="font-size:14px;color:FFFFFF">
@@ -38964,6 +39378,65 @@
                                     the entire alliance. Once a clan is taken out in these variants, they are out for good. Victory in these variants is based on alliance control of 10, 9, 8, or 8
                                     clan strongholds respectively (or all 12 if you are feeling frisky).
                                 </p><br>
+                                <h3 style="font-size:16px;color:F0D06B">Unit Information:</h3>
+                                <p style="font-size:14px;color:FFFFFF">
+                                    Ashigaru: Peasant recruits that are either conscripted or voluntarily join the ranks of their clan's army. Clan leaders and Nobori inspire peasants to enlist.
+	                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;-Cannot be purchased. Spawn from a Nobori or a Leader.<br><br>
+                                    Bushi: Warriors; samurai were sometimes referred to as "Bushi" because of the prominence of the samurai class and their monopoly of the soldier role. However, bushi are simply warriors not to be confused with samurai.<br><br>
+                                    Teppo: Gunners; deadly in an offensive role. Known as an anti-cavalry unit for their volley fire tactics, which were invented by Oda Nobunaga. Gunners were more expensive to deploy than archers but required less training to be as effective.<br><br>
+                                    Kyudoka: Archers; make a solid defense given their high rate of fire compared to matchlock firearms. Archers also had more readily available and cheaper ammunition in the form of arrows. Generally, more skilled than a gunner in terms of training. <br><br>
+                                    Ronin: Mercanaries for hire. Former samurai that have either abandoned or lost their lord. They now roam Japan looking for a way to make ends meet or to find and serve another lord.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;-Ronin can be purchased and placed on any of your territories and do not count towards the production limit, as they are constructions. Ronin require 2 PUs upkeep per round else they will leave your service.<br><br>
+                                    Nobori: Flagbearers. They are responsible for denoting units in armies and also managing troop morale. Nobori actually refers to the flag itself and not the soldier with it. The Nobori may also inspire the peasants and encourage them to enlist.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;-Nobori spawn 2 Ashigaru every round, and give +1 defense to 10 Ashigaru. This "Resolve" Bonus does not stack on the same units.<br><br>
+                                    Samurai: High ranking and highly skilled nobility that serve as retainers to the Daimyo (whom may also be samurai). Their presence on the battlefield and ability to lead inspire their troops.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;-Samurai give a +1 attack to 10 Ashigaru. This "Courage" bonus does not stack on the same units.<br><br>
+                                    Mawari: Cavalry; known for the swift charges that decimate enemy lines. Cavalry can travel quickly and carry others with them on horseback.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;-Can blitz. Can carry one unit, if the unit is land transportable.<br><br>
+                                    Ninja: Also known as Shinobi, they are the spies of Japan. Ninja conduct covert operations involving espionage, deception, and assassination.
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;-Can blitz. Rolls two dice for attack and defense. Inflicts a -1 attack on 5 enemy Ashigaru. This "Fear" bonus does not stack on the same units.<br><br>
+                                    Sashimono: Clan Banner. Essentially the symbol of a clan's power and influence. As you conquer territory you will see your sashimono spread. Units can be recruited from any sashimono that belongs to the player.
+	                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;-Acts as a factory, allowing any and all unit production up to the territory's value (except for Ronin - see above).
+                                </p><br>
+                                <h3 style="font-size:16px;color:F0D06B">Clan Advantages:</h3>
+                                <p style="font-size:14px;color:FFFFFF">
+                                    <b><u>Oda</u></b><br>
+                                    The Oda are rightly respected for their skills as inspiring battlefield commanders of ashigaru. "Others may covet titles, but ashigaru, common spearmen, are the bedrock of Oda might."<br>
+                                    (Improved Nobori bonus and cap allowance)<br><br>
+                                    <b><u>Miyoshi</u></b><br>
+                                    The Miyoshi clan have great influence and are mainly supported by their retainers, the Matsunaga clan. Their influence has faded over the years and in an attempt to keep from fading completely and being conquered the Miyoshi have placed an emphasis on defensive tactics.<br>
+                                    (Improved Kyudoka Defense)<br><br>
+                                    <b><u>Chosokabe</u></b><br>
+                                    The Chosokabe clan claim descent from the Chinese Emperor Qin Shi Huang. Despite their long history, the Chosokabe clan has had mixed fortunes. The current clan leader, Motochika Chosokabe, is fighting to unite his island of Shikoku and has enlisted the help of Magoichi Saika the leader of the Saika Renegades. The Saika are renowned for their sharpshooters.<br>
+                                    (Improved Teppo Offfense)<br><br>
+                                    <b><u>Otomo</u></b><br>
+                                    The Otomo Clan is the first to convert to Christianity and is disliked by all other clans due to religious differences (all others are Buddhist). However, the will of the Otomo men to fight for their beliefs gives them an unyielding determination.<br>
+                                    (Improved Bushi Defense)<br><br>
+                                    <b><u>Shimazu</u></b><br>
+                                    The Shimazu are a proud clan, with a long history worthy of their pride. They can trace their ancestry back to the Minamoto, the founders of the Kamakura shogunate. To the Shimazu, loyalty is everything, and their samurai are especially disciplined in Bushido.<br>
+                                    (Improved Samurai Offense)<br><br>
+                                    <b><u>Mori</u></b><br>
+                                    The Mori have a long history of seafaring and are sea masters without equal. This resulted in an increase of experienced archers for counter attacks at sea.<br>
+                                    (Improved Kyudoka Offense)<br><br>
+                                    <b><u>Azai</u></b><br>
+                                    Loyalty and fighting for a just cause are at the core of the Azai. This is reflected in the determination of their samurai, which greatly inspires others. The clan leader, Azai Nagamasa, married Oda Nobunaga's sister, Oichi, in 1564 and formed an alliance. However, in 1570 Oda Nobunaga declared war on the Asakura family of Echizen. The Asakura and Azai had been allies since the time of Nagamasa's grandfather. In the end, the Azai clan chose to honor the generations-old alliance with the Asakura and came to their aid.<br>
+                                    (Improved Samurai bonus to Ashigaru)<br><br>
+                                    <b><u>Uesugi</u></b><br>
+                                    The Uesugi are proud of their Buddhist faith, and rightly too. They are a pious and worthy people. The warrior monks of the Uesugi impart their training to Uesugi's warriors.<br>
+                                    (Improved Bushi Offense)<br><br>
+                                    <b><u>Date</u></b><br>
+                                    Date warriors are loyal to the ideals of bushido and possess an attacking spirit. Masamune has an affinity for firearms and has influenced his army to increase their arms training.<br>
+                                    (Improved Teppo Offense)<br><br>
+                                    <b><u>Hojo</u></b><br>
+                                    The Hojo are an old and powerful clan. The Hojo clan created the first Shogunate. Their influence can be felt around Japan and has gained them formidable allies. The Fūma ninja lead by Kotaro support the Hojo.<br>
+                                    (Improved Ninja Offense)<br><br>
+                                    <b><u>Takeda</u></b><br>
+                                    Takeda men are almost born in the saddle, and they are rightly respected for their mastery of horses and cavalry warfare. Takeda has opportunities and threats on all sides. Under their daimyo, Takeda Shingen, They have fought off repeated invasions from the neighboring Shinano province and battled against the Hojo and Imagawa clans. This has made them formidable warriors.<br>
+                                    (Improved Mawari Offense)<br><br>
+                                    <b><u>Tokugawa</u></b><br>
+                                    Although the Tokugawa are an ancient family, claiming descent from Minamoto no Yoritomo, the first shogun of the Kamakura shogunate, they have known hard times. The Tokugawa have been squeezed between two powerful and ambitious clans: The Imagawa to the east, and the Oda to the west, a most uncomfortable position. By accepting the protection of the Imagawa, the Tokugawa only guaranteed that they were frequently attacked by the Oda. This goes some way to explaining their superior diplomatic skills, their training and use of very good kisho ninja.<br>
+                                    (Improved Ninja Defense)
+                                </p><br>
                                 <h3 style="font-size:16px;color:F0D06B">Credits:</h3>
                                 <ul>
                                     <li style="font-size:14px;color:FFFFFF">The general map outline thanks to Rolf Larsson's Feudal Japan map</li>
@@ -38971,6 +39444,7 @@
                                     <li style="font-size:14px;color:FFFFFF">Shield dice images are made by TripleA community member Cernel</li>
                                     <li style="font-size:14px;color:FFFFFF">Unit images are based on various public domain sources, mostly pictures of painted miniatures I tooled around with in photoshop</li>
                                     <li style="font-size:14px;color:FFFFFF">The Samurai Warrior portraits and music clips are from the Samurai Warriors wiki, youtube, and other fan sites</li>
+                                    <li style="font-size:14px;color:FFFFFF">Additional inspiration courtesy of the "Total War: Shogun 2" video game, also taking place in Sengoku Period Japan</li>
                                     <li style="font-size:14px;color:FFFFFF">Special Thanks to Connor Hoover for assisting with documentation, play testing, game balancing, and brainstorming good ideas</li>
                                 </ul>
                             </div>
