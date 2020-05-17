@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="Twelve Clans - Triads" version="1.2.1"/>
+    <info name="Twelve Clans - Triads" version="1.2.2"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
     <triplea minimumVersion="1.9"/>
     <diceSides value="12"/>
@@ -3060,7 +3060,7 @@
                                     (Improved Kyudoka Defense)<br><br>
                                     <b><u>Chosokabe</u></b><br>
                                     The Chosokabe clan claim descent from the Chinese Emperor Qin Shi Huang. Despite their long history, the Chosokabe clan has had mixed fortunes. The current clan leader, Motochika Chosokabe, is fighting to unite his island of Shikoku and has enlisted the help of Magoichi Saika the leader of the Saika Renegades. The Saika are renowned for their sharpshooters.<br>
-                                    (Improved Teppo Offfense)<br><br>
+                                    (Improved Teppo Offense)<br><br>
                                     <b><u>Otomo</u></b><br>
                                     The Otomo Clan is the first to convert to Christianity and is disliked by all other clans due to religious differences (all others are Buddhist). However, the will of the Otomo men to fight for their beliefs gives them an unyielding determination.<br>
                                     (Improved Bushi Defense)<br><br>
