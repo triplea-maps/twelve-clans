@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="Twelve Clans - Coalitions" version="1.2"/>
+    <info name="Twelve Clans - Coalitions" version="1.2.1"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
     <triplea minimumVersion="1.9"/>
     <diceSides value="12"/>
