@@ -2542,6 +2542,776 @@
 	        <option name="notification" value="SpawnTadakatsu"/>
         </attachment>
 
+        <!-- list triggers for populating a Kenin in the captured capital based on above triggers -->
+        <attachment name="conditionAttachment_OdaFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToShimazu"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToOtomo"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToHojo"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToTakeda"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToUesugi"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToDate"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToChosokabe"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToAzai"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OdaFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Oda"/>
+        </attachment>
+        <attachment name="triggerAttachment_OdaFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OdaFallsToTokugawa"/>
+            <option name="placement" value="Oda:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToOtomo"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToHojo"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToTakeda"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToUesugi"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToDate"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToChosokabe"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToAzai"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToTokugawa"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToHojo"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToTakeda"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToUesugi"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToDate"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToChosokabe"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToAzai"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToTokugawa"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToOda"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToMiyoshi"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToHojo"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToTakeda"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToUesugi"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToDate"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToMori"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToAzai"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ChosokabeFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Chosokabe"/>
+        </attachment>
+        <attachment name="triggerAttachment_ChosokabeFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ChosokabeFallsToTokugawa"/>
+            <option name="placement" value="Chosokabe:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToMiyoshi"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToHojo"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToTakeda"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToUesugi"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToDate"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToMori"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToAzai"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToTokugawa"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToHojo"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToTakeda"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToUesugi"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToDate"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToMori"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToAzai"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToTokugawa"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToOda"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToMiyoshi"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToShimazu"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToOtomo"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToUesugi"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToDate"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToMori"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToChosokabe"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TokugawaFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Tokugawa"/>
+        </attachment>
+        <attachment name="triggerAttachment_TokugawaFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TokugawaFallsToAzai"/>
+            <option name="placement" value="Tokugawa:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToMiyoshi"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToShimazu"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToOtomo"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToUesugi"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToDate"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToMori"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToChosokabe"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_HojoFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToAzai"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToShimazu"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToOtomo"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToUesugi" attachTo="Uesugi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToUesugi" attachTo="Uesugi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToUesugi"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:UesugiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToDate" attachTo="Date" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToDate" attachTo="Date" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToDate"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:DateBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToMori"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToChosokabe"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToAzai" attachTo="Azai" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToAzai" attachTo="Azai" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToAzai"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToOda"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToMiyoshi"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToShimazu"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToOtomo"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToHojo"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToTakeda"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToMori"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToChosokabe"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_AzaiFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Azai"/>
+        </attachment>
+        <attachment name="triggerAttachment_AzaiFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_AzaiFallsToTokugawa"/>
+            <option name="placement" value="Azai:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToMiyoshi"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToShimazu"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToOtomo"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToHojo"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToTakeda"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToMori"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToChosokabe"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToTokugawa"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToShimazu"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToOtomo"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToHojo" attachTo="Hojo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToHojo"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:HojoBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToTakeda" attachTo="Takeda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToTakeda" attachTo="Takeda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToTakeda"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:TakedaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToMori" attachTo="Mori" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToMori" attachTo="Mori" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToMori"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:MoriBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToChosokabe" attachTo="Chosokabe" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToChosokabe" attachTo="Chosokabe" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToChosokabe"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:ChosokabeBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToTokugawa" attachTo="Tokugawa" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToTokugawa" attachTo="Tokugawa" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToTokugawa"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+
         <!-- Victory conditions and triggers for this version -->
         <attachment name="conditionAttachment_VictoryOda" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
             <option name="alliedOwnershipTerritories" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa" count="9"/>
