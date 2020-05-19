@@ -2615,6 +2615,14 @@
             <option name="placement" value="Oda:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
         </attachment>
+        <attachment name="conditionAttachment_MiyoshiFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Miyoshi"/>
+        </attachment>
+        <attachment name="triggerAttachment_MiyoshiFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MiyoshiFallsToShimazu"/>
+            <option name="placement" value="Miyoshi:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
         <attachment name="conditionAttachment_MiyoshiFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Miyoshi"/>
         </attachment>
@@ -2678,6 +2686,22 @@
             <option name="conditions" value="conditionAttachment_MiyoshiFallsToTokugawa"/>
             <option name="placement" value="Miyoshi:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToShimazu" attachTo="Shimazu" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToShimazu"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:ShimazuBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_MoriFallsToOtomo" attachTo="Otomo" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Mori"/>
+        </attachment>
+        <attachment name="triggerAttachment_MoriFallsToOtomo" attachTo="Otomo" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_MoriFallsToOtomo"/>
+            <option name="placement" value="Mori:Kenin"/>
+            <option name="when" value="after:OtomoBattle"/>
         </attachment>
         <attachment name="conditionAttachment_MoriFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Mori"/>
@@ -2807,6 +2831,14 @@
             <option name="placement" value="Chosokabe:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
         </attachment>
+        <attachment name="conditionAttachment_ShimazuFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Shimazu"/>
+        </attachment>
+        <attachment name="triggerAttachment_ShimazuFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_ShimazuFallsToOda"/>
+            <option name="placement" value="Shimazu:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
         <attachment name="conditionAttachment_ShimazuFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Shimazu"/>
         </attachment>
@@ -2870,6 +2902,22 @@
             <option name="conditions" value="conditionAttachment_ShimazuFallsToTokugawa"/>
             <option name="placement" value="Shimazu:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToOda"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_OtomoFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Otomo"/>
+        </attachment>
+        <attachment name="triggerAttachment_OtomoFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_OtomoFallsToMiyoshi"/>
+            <option name="placement" value="Otomo:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
         </attachment>
         <attachment name="conditionAttachment_OtomoFallsToHojo" attachTo="Hojo" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Otomo"/>
@@ -2999,6 +3047,14 @@
             <option name="placement" value="Tokugawa:Kenin"/>
             <option name="when" value="after:AzaiBattle"/>
         </attachment>
+        <attachment name="conditionAttachment_HojoFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Hojo"/>
+        </attachment>
+        <attachment name="triggerAttachment_HojoFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_HojoFallsToOda"/>
+            <option name="placement" value="Hojo:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
         <attachment name="conditionAttachment_HojoFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Hojo"/>
         </attachment>
@@ -3062,6 +3118,22 @@
             <option name="conditions" value="conditionAttachment_HojoFallsToAzai"/>
             <option name="placement" value="Hojo:Kenin"/>
             <option name="when" value="after:AzaiBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToOda"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_TakedaFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Takeda"/>
+        </attachment>
+        <attachment name="triggerAttachment_TakedaFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_TakedaFallsToMiyoshi"/>
+            <option name="placement" value="Takeda:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
         </attachment>
         <attachment name="conditionAttachment_TakedaFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Takeda"/>
@@ -3191,6 +3263,14 @@
             <option name="placement" value="Azai:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
         </attachment>
+        <attachment name="conditionAttachment_UesugiFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Uesugi"/>
+        </attachment>
+        <attachment name="triggerAttachment_UesugiFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_UesugiFallsToOda"/>
+            <option name="placement" value="Uesugi:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
         <attachment name="conditionAttachment_UesugiFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Uesugi"/>
         </attachment>
@@ -3254,6 +3334,22 @@
             <option name="conditions" value="conditionAttachment_UesugiFallsToTokugawa"/>
             <option name="placement" value="Uesugi:Kenin"/>
             <option name="when" value="after:TokugawaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToOda" attachTo="Oda" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToOda" attachTo="Oda" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToOda"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:OdaBattle"/>
+        </attachment>
+        <attachment name="conditionAttachment_DateFallsToMiyoshi" attachTo="Miyoshi" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Date"/>
+        </attachment>
+        <attachment name="triggerAttachment_DateFallsToMiyoshi" attachTo="Miyoshi" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachment_DateFallsToMiyoshi"/>
+            <option name="placement" value="Date:Kenin"/>
+            <option name="when" value="after:MiyoshiBattle"/>
         </attachment>
         <attachment name="conditionAttachment_DateFallsToShimazu" attachTo="Shimazu" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="Date"/>
