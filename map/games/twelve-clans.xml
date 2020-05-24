@@ -1642,18 +1642,6 @@
             <option name="originalOwner" value="Neutral"/>
         </attachment>
 
-        <!-- Prologue popup -->
-        <attachment name="conditionAttachmentPrologue" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-            <option name="rounds" value="1"/>
-        </attachment>
-        <attachment name="triggerAttachmentMap_Prologue" attachTo="Oda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-            <option name="conditions" value="conditionAttachmentPrologue"/>
-            <option name="notification" value="Prologue"/>
-            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
-            <option name="when" value="before:OdaCombatMove"/>
-            <option name="uses" value="1"/>
-        </attachment>
-
         <!-- Support Attachments (basic/special units) -->
         <attachment name="supportAttachmentBushi" attachTo="Bushi" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
             <option name="unitType" value="Ashigaru"/>
@@ -2186,6 +2174,68 @@
             <option name="bonusType" value="Ninpo"/>
             <option name="players" value="Tokugawa"/>
             <option name="impArtTech" value="false"/>
+        </attachment>
+
+        <!-- Clan Objectives (new in 1.3) -->
+        <attachment name="objectiveAttachmentOda" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Oda:Iga:Shima:Kawachi:Kii:Miyoshi"/>
+        </attachment>
+        <attachment name="objectiveAttachmentMiyoshi" attachTo="Miyoshi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Yamato:Iga:Settsu:Kawachi:Kii:Miyoshi"/>
+        </attachment>
+        <attachment name="objectiveAttachmentChosokabe" attachTo="Chosokabe" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="15"/>
+            <option name="alliedOwnershipTerritories" value="Chosokabe:Iyo:Awa:Sanuki:Awaji"/>
+        </attachment>
+        <attachment name="objectiveAttachmentOtomo" attachTo="Otomo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Otomo:Chikuzen:Hizen:Higo:Osumi:Shimazu"/>
+        </attachment>
+        <attachment name="objectiveAttachmentShimazu" attachTo="Shimazu" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Otomo:Chikuzen:Hizen:Higo:Osumi:Shimazu"/>
+        </attachment>
+        <attachment name="objectiveAttachmentMori" attachTo="Mori" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="15"/>
+            <option name="alliedOwnershipTerritories" value="Mori:Nagato:Iwami:Izumo:Bizen"/>
+        </attachment>
+        <attachment name="objectiveAttachmentAzai" attachTo="Azai" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Sado:Azai:Hida:Omi:Yamashiro:Tango"/>
+        </attachment>
+        <attachment name="objectiveAttachmentUesugi" attachTo="Uesugi" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Date:Dewa:Sado:Uesugi:Kozuke:Mutsu"/>
+        </attachment>
+        <attachment name="objectiveAttachmentDate" attachTo="Date" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Date:Dewa:Mutsu:Uesugi:Kozuke:Hitachi"/>
+        </attachment>
+        <attachment name="objectiveAttachmentHojo" attachTo="Hojo" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Hojo:Izu:Shimosa:Takeda:Hitachi:Kozuke"/>
+        </attachment>
+        <attachment name="objectiveAttachmentTakeda" attachTo="Takeda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="18"/>
+            <option name="alliedOwnershipTerritories" value="Hojo:Izu:Shimosa:Takeda:Shinano:Kozuke"/>
+        </attachment>
+        <attachment name="objectiveAttachmentTokugawa" attachTo="Tokugawa" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="objectiveValue" value="15"/>
+            <option name="alliedOwnershipTerritories" value="Tokugawa:Mikawa:Omi:Shinano:Hida"/>
+        </attachment>
+
+        <!-- Prologue popup -->
+        <attachment name="conditionAttachmentPrologue" attachTo="Oda" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+            <option name="rounds" value="1"/>
+        </attachment>
+        <attachment name="triggerAttachmentMap_Prologue" attachTo="Oda" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentPrologue"/>
+            <option name="notification" value="Prologue"/>
+            <option name="players" value="Oda:Miyoshi:Chosokabe:Otomo:Shimazu:Mori:Azai:Uesugi:Date:Hojo:Takeda:Tokugawa"/>
+            <option name="when" value="before:OdaCombatMove"/>
+            <option name="uses" value="1"/>
         </attachment>
 
         <!-- Samurai Warrior Triggers to spawn special heroes per three rounds provided the clan capital is retained -->
@@ -39370,6 +39420,7 @@
 
         <property name="Alliances Can Chain Together" value="true" editable="false"><boolean/></property>
         <property name="Low Luck" value="false" editable="true"><boolean/></property>
+        <property name="National Objectives" value="true" editable="true"><boolean/></property>
         <property name="Neutrals Are Blitzable" value="true" editable="false"><boolean/></property>
         <property name="Place in Any Territory" value="true" editable="false"><boolean/></property>
         <property name="Projection of Power" value="false" editable="false"><boolean/></property>
@@ -39431,44 +39482,56 @@
                                     Sashimono: Clan Banner. Essentially the symbol of a clan's power and influence. As you conquer territory you will see your sashimono spread. Units can be recruited from any sashimono that belongs to the player.
 	                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;-Acts as a factory, allowing any and all unit production up to the territory's value (except for Ronin - see above).
                                 </p><br>
-                                <h3 style="font-size:16px;color:F0D06B">Clan Advantages:</h3>
+                                <h3 style="font-size:16px;color:F0D06B">Clan Advantages and Objectives:</h3>
                                 <p style="font-size:14px;color:FFFFFF">
                                     <b><u>Oda</u></b><br>
                                     The Oda are rightly respected for their skills as inspiring battlefield commanders of ashigaru. "Others may covet titles, but ashigaru, common spearmen, are the bedrock of Oda might."<br>
                                     (Improved Nobori bonus and cap allowance)<br><br>
+                                    The Oda clan seeks to unite the lands of the Kansai Prefecture before making the push for Shogun. Take control of Oda, Iga, Shima, Kawachi, Kii, and Miyoshi to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Miyoshi</u></b><br>
                                     The Miyoshi clan have great influence and are mainly supported by their retainers, the Matsunaga clan. Their influence has faded over the years and in an attempt to keep from fading completely and being conquered the Miyoshi have placed an emphasis on defensive tactics.<br>
                                     (Improved Kyudoka Defense)<br><br>
+                                    The Miyoshi clan seeks to unite the lands of the Kansai Prefecture before making the push for Shogun. Take control of Miyoshi, Yamato, Iga, Settsu, Kawachi, and Kii to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Chosokabe</u></b><br>
                                     The Chosokabe clan claim descent from the Chinese Emperor Qin Shi Huang. Despite their long history, the Chosokabe clan has had mixed fortunes. The current clan leader, Motochika Chosokabe, is fighting to unite his island of Shikoku and has enlisted the help of Magoichi Saika the leader of the Saika Renegades. The Saika are renowned for their sharpshooters.<br>
                                     (Improved Teppo Defense)<br><br>
+                                    The Chosokabe clan seeks to unite the lands of the Shikoku Prefecture before making the push for Shogun. Take control of Chosokabe, Iyo, Awa, Sanuki, and Awaji to earn an additional 15 PUs per round!<br><br>
                                     <b><u>Otomo</u></b><br>
                                     The Otomo Clan is the first to convert to Christianity and is disliked by all other clans due to religious differences (all others are Buddhist). However, the will of the Otomo men to fight for their beliefs gives them an unyielding determination.<br>
                                     (Improved Bushi Defense)<br><br>
+                                    The Otomo clan seeks to unite the lands of the Kyushu Prefecture before making the push for Shogun. Take control of Otomo, Chikuzen, Hizen, Higo, Osumi, and Shimazu to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Shimazu</u></b><br>
                                     The Shimazu are a proud clan, with a long history worthy of their pride. They can trace their ancestry back to the Minamoto, the founders of the Kamakura shogunate. To the Shimazu, loyalty is everything, and their samurai are especially disciplined in Bushido.<br>
                                     (Improved Samurai Offense)<br><br>
+                                    The Shimazu clan seeks to unite the lands of the Kyushu Prefecture before making the push for Shogun. Take control of Shimazu, Osumi, Higo, Hizen, Chikuzen, and Otomo to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Mori</u></b><br>
                                     The Mori have a long history of seafaring and are sea masters without equal. This resulted in an increase of experienced archers for counter attacks at sea.<br>
                                     (Improved Kyudoka Offense)<br><br>
+                                    The Mori clan seeks to unite the lands of the Chugoku Prefecture before making the push for Shogun. Take control of Mori, Nagato, Iwami, Izumo, and Bizen to earn an additional 15 PUs per round!<br><br>
                                     <b><u>Azai</u></b><br>
                                     Loyalty and fighting for a just cause are at the core of the Azai. This is reflected in the determination of their samurai, which greatly inspires others. The clan leader, Azai Nagamasa, married Oda Nobunaga's sister, Oichi, in 1564 and formed an alliance. However, in 1570 Oda Nobunaga declared war on the Asakura family of Echizen. The Asakura and Azai had been allies since the time of Nagamasa's grandfather. In the end, the Azai clan chose to honor the generations-old alliance with the Asakura and came to their aid.<br>
                                     (Improved Samurai bonus to Ashigaru)<br><br>
+                                    The Azai clan seeks to unite the lands of the Chubu Prefecture before making the push for Shogun. Take control of Azai, Sado, Hida, Omi, Yamashiro, and Tango to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Uesugi</u></b><br>
                                     The Uesugi are proud of their Buddhist faith, and rightly too. They are a pious and worthy people. The warrior monks of the Uesugi impart their training to Uesugi's warriors.<br>
                                     (Improved Bushi Offense)<br><br>
+                                    The Uesugi clan seeks to unite the lands of the Tohoku Prefecture before making the push for Shogun. Take control of Uesugi, Dewa, Sado, Date, Kozuke, and Mutsu to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Date</u></b><br>
                                     Date warriors are loyal to the ideals of bushido and possess an attacking spirit. Masamune has an affinity for firearms and has influenced his army to increase their arms training.<br>
                                     (Improved Teppo Offense)<br><br>
+                                    The Date clan seeks to unite the lands of the Tohoku Prefecture before making the push for Shogun. Take control of Date, Dewa, Mutsu, Uesugi, Kozuke, and Hitachi to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Hojo</u></b><br>
                                     The Hojo are an old and powerful clan. The Hojo clan created the first Shogunate. Their influence can be felt around Japan and has gained them formidable allies. The Fūma ninja lead by Kotaro support the Hojo.<br>
                                     (Improved Ninja Offense)<br><br>
+                                    The Hojo clan seeks to unite the lands of the Kanto Prefecture before making the push for Shogun. Take control of Hojo, Izu, Shimosa, Takeda, Hitachi, and Kozuke to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Takeda</u></b><br>
                                     Takeda men are almost born in the saddle, and they are rightly respected for their mastery of horses and cavalry warfare. Takeda has opportunities and threats on all sides. Under their daimyo, Takeda Shingen, They have fought off repeated invasions from the neighboring Shinano province and battled against the Hojo and Imagawa clans. This has made them formidable warriors.<br>
                                     (Improved Mawari Offense)<br><br>
+                                    The Takeda clan seeks to unite the lands of the Kanto Prefecture before making the push for Shogun. Take control of Takeda, Izu, Shimosa, Hojo, Shinano, and Kozuke to earn an additional 18 PUs per round!<br><br>
                                     <b><u>Tokugawa</u></b><br>
                                     Although the Tokugawa are an ancient family, claiming descent from Minamoto no Yoritomo, the first shogun of the Kamakura shogunate, they have known hard times. The Tokugawa have been squeezed between two powerful and ambitious clans: The Imagawa to the east, and the Oda to the west, a most uncomfortable position. By accepting the protection of the Imagawa, the Tokugawa only guaranteed that they were frequently attacked by the Oda. This goes some way to explaining their superior diplomatic skills, their training and use of very good kisho ninja.<br>
-                                    (Improved Ninja Defense)
+                                    (Improved Ninja Defense)<br><br>
+                                    The Tokugawa clan seeks to unite the lands of the Chubu Prefecture before making the push for Shogun. Take control of Tokugawa, Mikawa, Omi, Shinano, and Hida to earn an additional 15 PUs per round!
                                 </p><br>
                                 <h3 style="font-size:16px;color:F0D06B">Credits:</h3>
                                 <ul>
