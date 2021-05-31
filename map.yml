@@ -1,0 +1,7 @@
+map_name: twelve-clans
+games:
+- {game_name: Twelve Clans - Blood Pact, file_name: twelve-clans-bloodpact.xml}
+- {game_name: Twelve Clans - Triads, file_name: twelve-clans-triads.xml}
+- {game_name: Twelve Clans, file_name: twelve-clans.xml}
+- {game_name: Twelve Clans - Sekigahara, file_name: twelve-clans-sekigahara.xml}
+- {game_name: Twelve Clans - Coalitions, file_name: twelve-clans-coalitions.xml}
